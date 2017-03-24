@@ -1,0 +1,6 @@
+x=read.csv("D:/2016hg.csv",header=T)
+library("rpart")
+head(x)
+fit=rpart(trac~.,data=x,control=rpart.control(minbucket=50,cp=0.0001))
+library(maptree)
+draw.tree(fit)
